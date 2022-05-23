@@ -27,3 +27,52 @@ response = requests.request(
 )
 
 print(response.text)
+
+
+#################pushing data using urllib3 #############################
+
+import warnings
+import urllib3
+warnings.filterwarnings('ignore')
+
+
+username = 'vijay4587'
+password = '3rpVDzP2czq232X9DJTH'
+credentials = username + ":" + password
+
+app_url = "https://api.bitbucket.org/2.0/repositories/vijay4587/main_repository/src"
+
+with open(r'C:\Users\vijay\Documents\america_text.txt', 'rb') as fp:
+    file_data = fp.read()
+
+files = {'upload_file': ('america_text.txt', file_data)}
+
+# files = {'upload_file': open('devices.txt', 'rb')}
+# values = {'DB': 'photcat', 'OUT': 'csv', 'SHORT': 'short'}
+# r = requests.post(url, files=files, data=values)
+
+http = urllib3.PoolManager(cert_reqs="CERT_NONE")
+headers = urllib3.make_headers(basic_auth=credentials)
+headers.update({"Accept": "application/json"})
+
+api_call = http.request('POST', url=app_url, fields=files, headers=headers)
+
+print(api_call.status)
+#
+#
+#
+# headers = {
+#     "Accept": "application/json",
+# }
+#
+# response = requests.request(
+#     "POST",
+#     url,
+#     headers=headers,
+#     auth=auth1,
+#
+#     files=files,
+#     # data=values
+# )
+#
+# print(response.text)
