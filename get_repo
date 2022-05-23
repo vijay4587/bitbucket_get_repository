@@ -1,0 +1,23 @@
+from requests.auth import HTTPBasicAuth
+import requests
+import json
+
+
+username = ''
+password = '' # app password
+
+url = "https://api.bitbucket.org/2.0/repositories/vijay4587"
+auth1 = HTTPBasicAuth(username, password )
+
+headers = {
+   "Accept": "application/json",
+}
+
+response = requests.request(
+   "GET",
+   url,
+   headers=headers,
+   auth = auth1
+)
+
+print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
