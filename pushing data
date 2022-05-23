@@ -45,7 +45,7 @@ app_url = "https://api.bitbucket.org/2.0/repositories/vijay4587/main_repository/
 with open(r'C:\Users\vijay\Documents\america_text.txt', 'rb') as fp:
     file_data = fp.read()
 
-files = {'upload_file': ('america_text.txt', file_data)}
+files = {'/temo/path/test_data': ('america_text.txt', file_data)}
 
 # files = {'upload_file': open('devices.txt', 'rb')}
 # values = {'DB': 'photcat', 'OUT': 'csv', 'SHORT': 'short'}
