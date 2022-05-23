@@ -3,7 +3,7 @@ import requests
 import json
 
 username = 'vijay4587'
-password = 'Exjxxd6fF9Tk2VMwabBY'
+password = '' ### app password
 
 url = "https://api.bitbucket.org/2.0/repositories/vijay4587/main_repository/src"
 auth1 = HTTPBasicAuth(username, password)
@@ -37,7 +37,7 @@ warnings.filterwarnings('ignore')
 
 
 username = 'vijay4587'
-password = '3rpVDzP2czq232X9DJTH'
+password = '' app password
 credentials = username + ":" + password
 
 app_url = "https://api.bitbucket.org/2.0/repositories/vijay4587/main_repository/src"
